@@ -33,11 +33,11 @@ resource "vsphere_virtual_machine" "vm" {
       }
 
       network_interface {
-        ipv4_address = ["${element(var.ipaddress, count.index)}"]
+        ipv4_address = "${element(var.ipaddress, 0)}"
         ipv4_netmask = "${var.ipv4submask}"
       }
 
-      dns_server_list = ["${var.vmdns}"]
+      dns_server_list = "${var.vmdns}"
       ipv4_gateway    = "${var.vmgateway}"
     }
   }
