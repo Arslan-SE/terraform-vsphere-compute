@@ -41,5 +41,5 @@ resource "vsphere_virtual_machine" "vm" {
       ipv4_gateway    = "${var.vmgateway}"
     }
   }
-  custom_attributes = "${map(vsphere_custom_attribute.attribute.id, "${var.attributeValue}")}"
+  //custom_attributes = "${map(vsphere_custom_attribute.attribute.id, "${var.attributeValue}")}"
 }

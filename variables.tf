@@ -20,6 +20,7 @@ variable "vmtemplate" {
   description = "Name of the template available in the vSphere"
 }
 
+/*
 // Attribute Name 
 variable "attribute" {
   description = "The attribute Name"
@@ -39,7 +40,7 @@ variable "tagCategory" {
 variable "tag" {
   description = "The Tag Name"
 }
-
+*/
 #### NETWORKING ####
 
 variable "vnet" {
