@@ -37,7 +37,7 @@ resource "vsphere_virtual_machine" "vm" {
         ipv4_netmask = "${var.ipv4submask}"
       }
 
-      dns_server_list = "${var.vmdns}"
+      dns_server_list = ["${var.vmdns}"]
       ipv4_gateway    = "${var.vmgateway}"
     }
   }
