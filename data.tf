@@ -1,3 +1,4 @@
+
 data "vsphere_datacenter" "dc" {
   name = "${var.dc}"
 }
@@ -24,3 +25,16 @@ data "vsphere_virtual_machine" "template" {
   name          = "${var.vmtemplate}"
   datacenter_id = "${data.vsphere_datacenter.dc.id}"
 }
+
+
+/*
+variable "org" { }
+variable "workspaceName" { }
+data "terraform_remote_state" "network" {
+  backend = "atlas"
+
+  config {
+    name = "${var.org}/${var.workspaceName}"
+  }
+}
+*/
