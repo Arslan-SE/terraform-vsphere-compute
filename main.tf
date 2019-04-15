@@ -2,20 +2,16 @@ resource "vsphere_virtual_machine" "vm" {
   count = "${var.instances}"
   name  = "${var.vmname_prefix}${var.vmname}${count.index+1}"
 
-  //name             = "${var.vmname}"
   resource_pool_id = "${data.vsphere_compute_cluster.compute_cluster.resource_pool_id}"
   folder           = "${vsphere_folder.folder.path}"
-  // datastore_cluster_id = "${data.vsphere_datastore_cluster.datastore_cluster.id}"
-
+  
   num_cpus = "${var.cpu_number}" 
   memory   = "${var.ram_size}"
-  //guest_id  = "${data.vsphere_virtual_machine.template.guest_id}"
   guest_id  = "ubuntu64Guest"
   scsi_type = "${data.vsphere_virtual_machine.template.scsi_type}"
   network_interface {
     network_id = "${data.vsphere_network.network.id}"
 
-    //adapter_type = "${data.vsphere_virtual_machine.template.network_interface_types[0]}"
   }
 
   disk {
